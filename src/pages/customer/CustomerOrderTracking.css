@@ -1,0 +1,497 @@
+/* ================================
+   CUSTOMER ORDER TRACKING CSS
+================================ */
+
+.cot-container {
+  background: #f7f8fa;
+  min-height: 100vh;
+  padding-bottom: 100px;
+}
+
+/* ---- Loading / Empty ---- */
+.cot-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: 16px;
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+.cot-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  gap: 12px;
+  padding: 24px;
+  text-align: center;
+}
+
+.cot-empty-icon {
+  font-size: 5rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+.cot-empty h2 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.cot-empty p {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin: 0 0 16px;
+}
+
+/* ---- Header ---- */
+.cot-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: white;
+  border-bottom: 1px solid #f1f5f9;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.cot-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  font-family: 'Outfit', sans-serif;
+  margin: 0;
+  flex: 1;
+}
+
+.cot-refresh-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: #f7f8fa;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #64748b;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.cot-refresh-btn:hover { background: #eef0f3; }
+
+.cot-refresh-btn.spinning svg {
+  animation: spin 0.8s linear infinite;
+}
+
+/* ---- Active Order Card ---- */
+.cot-active-card {
+  background: white;
+  margin: 12px 16px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+/* Status Hero */
+.cot-status-hero {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: white;
+}
+
+.cot-status-emoji {
+  font-size: 3rem;
+  line-height: 1;
+  animation: float 2.5s ease-in-out infinite;
+}
+
+.cot-status-info { flex: 1; }
+
+.cot-status-label {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: white;
+  margin: 0 0 4px;
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: -0.01em;
+}
+
+.cot-status-desc {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.85);
+  margin: 0 0 10px;
+}
+
+.cot-eta-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(255,255,255,0.22);
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  backdrop-filter: blur(6px);
+}
+
+/* Order Meta */
+.cot-order-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.cot-order-id {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  font-family: 'Outfit', sans-serif;
+}
+
+.cot-order-time {
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+/* ---- Stepper ---- */
+.cot-stepper {
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.cot-step-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.cot-step {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 0;
+  opacity: 0.4;
+  transition: opacity 0.3s;
+}
+
+.cot-step.done, .cot-step.current {
+  opacity: 1;
+}
+
+.cot-step-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 14px;
+  background: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+
+.cot-step.done .cot-step-icon {
+  background: #F0FDF4;
+  color: #22c55e;
+}
+
+.cot-step.current .cot-step-icon {
+  background: var(--primary-light);
+  color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+  animation: pulse-ring 1.5s ease-out infinite;
+}
+
+.cot-step-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-family: 'Outfit', sans-serif;
+}
+
+.cot-step.current .cot-step-label {
+  color: var(--primary);
+  font-weight: 800;
+}
+
+.cot-step-line {
+  width: 2px;
+  height: 20px;
+  background: #e2e8f0;
+  margin: 0 19px;
+  border-radius: 2px;
+  transition: background 0.3s;
+}
+
+.cot-step-line.done {
+  background: linear-gradient(to bottom, #22c55e, #16a34a);
+}
+
+/* ---- Map Placeholder ---- */
+.cot-map-placeholder {
+  margin: 0 16px 16px;
+  height: 160px;
+  background: #e8f4fd;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid #bee3f8;
+}
+
+.cot-map-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  height: 100%;
+  gap: 1px;
+}
+
+.cot-map-cell {
+  background: linear-gradient(135deg, #dbeafe 25%, #bfdbfe 75%);
+  opacity: 0.5;
+}
+
+.cot-map-cell:nth-child(odd) {
+  opacity: 0.3;
+}
+
+.cot-map-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(235, 248, 255, 0.75);
+  backdrop-filter: blur(3px);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #1e40af;
+}
+
+.cot-rider-dot {
+  position: absolute;
+  font-size: 1.8rem;
+  bottom: 30px;
+  left: 40%;
+  animation: riderMove 4s ease-in-out infinite;
+}
+
+@keyframes riderMove {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(30px); }
+}
+
+/* ---- Delivery Partner ---- */
+.cot-driver-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.cot-driver-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #FF6B35, #FF4D4F);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  font-weight: 800;
+  flex-shrink: 0;
+  font-family: 'Outfit', sans-serif;
+}
+
+.cot-driver-info { flex: 1; }
+
+.cot-driver-name {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #1e1e1e;
+  margin: 0 0 2px;
+  font-family: 'Outfit', sans-serif;
+}
+
+.cot-driver-label {
+  font-size: 0.72rem;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.cot-driver-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.cot-contact-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 14px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cot-contact-btn.call {
+  background: #F0FDF4;
+  color: #16a34a;
+}
+
+.cot-contact-btn.call:hover {
+  background: #22c55e;
+  color: white;
+}
+
+.cot-contact-btn.msg {
+  background: #EFF6FF;
+  color: #2563eb;
+}
+
+.cot-contact-btn.msg:hover {
+  background: #3b82f6;
+  color: white;
+}
+
+/* ---- Order History ---- */
+.cot-history {
+  padding: 8px 16px 16px;
+}
+
+.cot-history-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin: 8px 0 12px;
+}
+
+.cot-order-card {
+  background: white;
+  border-radius: 14px;
+  padding: 14px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  cursor: pointer;
+  border: 1.5px solid transparent;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  transition: all 0.2s ease;
+}
+
+.cot-order-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.cot-order-card.selected {
+  border-color: var(--primary);
+  background: var(--primary-light);
+}
+
+.cot-order-card-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
+}
+
+.cot-order-status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+
+.cot-order-card-id {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0 0 3px;
+  font-family: 'Outfit', sans-serif;
+}
+
+.cot-order-card-items {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin: 0 0 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 180px;
+}
+
+.cot-order-card-time {
+  font-size: 0.7rem;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.cot-order-card-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+  flex-shrink: 0;
+}
+
+.cot-order-total {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  font-family: 'Outfit', sans-serif;
+}
+
+.cot-order-status-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+/* Rating Row */
+.cot-rate-row {
+  display: flex;
+  gap: 2px;
+  margin-top: 2px;
+}
+
+.cot-star {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px;
+  transition: transform 0.15s;
+  line-height: 1;
+}
+
+.cot-star:hover { transform: scale(1.2); }
+.cot-star.lit svg { filter: drop-shadow(0 0 3px rgba(245,158,11,0.5)); }

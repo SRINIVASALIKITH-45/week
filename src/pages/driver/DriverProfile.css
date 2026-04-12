@@ -1,0 +1,134 @@
+.profile-container {
+    padding: 20px;
+    min-height: calc(100vh - 70px);
+    background: #f8fafc;
+}
+
+.profile-header {
+    background: linear-gradient(135deg, #4f46e5 0%, #312e81 100%);
+    margin: -20px -20px 20px -20px;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
+}
+
+.profile-avatar {
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.profile-header h2 {
+    margin: 0 0 10px 0;
+    font-size: 1.5rem;
+}
+
+.driver-rating {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.star-icon.fill {
+    color: #fbbf24;
+    fill: #fbbf24;
+}
+
+.rating-count {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+
+.profile-details-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px dashed #e2e8f0;
+}
+
+.detail-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.detail-item:first-child {
+    padding-top: 0;
+}
+
+.detail-icon {
+    width: 40px;
+    height: 40px;
+    background: #f1f5f9;
+    color: #4f46e5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.detail-content span {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+}
+
+.detail-content p {
+    margin: 4px 0 0 0;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.text-muted {
+    color: #94a3b8 !important;
+}
+
+.logout-btn {
+    width: 100%;
+    padding: 16px;
+    background: #fff;
+    border: 1px solid #fee2e2;
+    color: #ef4444;
+    font-size: 1.05rem;
+    font-weight: 700;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+}
+
+.logout-btn:active {
+    background: #fee2e2;
+}

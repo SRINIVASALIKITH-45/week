@@ -1,0 +1,287 @@
+/* ═══════════════════════════════════════════════════════════
+   KITCHEN PANEL — FINAL MOBILE-FIRST REFINEMENT
+   Forcing the "App" look on all screen sizes
+   ═══════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --nav-bg: #ffffff;
+  --body-bg: #f8fafc;
+  --hero-bg: #1e293b;
+  --primary: #4f46e5;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --status-ready: #10b981;
+}
+
+/* ── APP CONTAINER (FORCING MOBILE LOOK) ── */
+.km-app-shell {
+  min-height: 100vh;
+  background: #f1f5f9; /* Outer background */
+  display: flex;
+  justify-content: center;
+}
+
+.km-mobile-wrapper {
+  width: 100%;
+  max-width: 480px; /* SAME AS WRITER PANEL */
+  background: var(--body-bg);
+  min-height: 100vh;
+  position: relative;
+  box-shadow: 0 0 60px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  font-family: 'Outfit', sans-serif;
+}
+
+/* ── NAVBAR ── */
+.km-navbar {
+  background: var(--nav-bg);
+  height: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+}
+
+.km-nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.km-nav-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--primary);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.km-nav-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  margin: 0;
+  color: var(--text-main);
+}
+
+.km-nav-logout {
+  width: 36px;
+  height: 36px;
+  background: #fef2f2;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ef4444;
+  border: none;
+}
+
+/* ── HERO CARD ── */
+.km-hero-section {
+  padding: 16px;
+}
+
+.km-hero-card {
+  background: var(--hero-bg);
+  border-radius: 28px;
+  padding: 24px 20px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.2);
+}
+
+.km-profile-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.km-chef-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.km-chef-avatar {
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.km-chef-name {
+  font-size: 1.2rem;
+  font-weight: 900;
+  margin: 0;
+}
+
+.km-duty-btn {
+  background: #10b981;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 12px;
+  color: white;
+  font-weight: 800;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.km-hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.km-hero-stat-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.km-hero-stat-val {
+  font-size: 1.15rem;
+  font-weight: 900;
+  display: block;
+}
+
+.km-hero-stat-label {
+  font-size: 0.6rem;
+  color: #94a3b8;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* ── PILL FILTERS ── */
+.km-filter-scroller {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 0 20px 16px;
+  scrollbar-width: none;
+}
+
+.km-filter-scroller::-webkit-scrollbar { display: none; }
+
+.pill-soft {
+  padding: 8px 16px;
+  border-radius: 12px;
+  background: white;
+  border: 1.5px solid #f1f5f9;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #64748b;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+.pill-soft.active {
+  background: #1e293b;
+  border-color: #1e293b;
+  color: white;
+  box-shadow: 0 4px 12px rgba(30, 41, 59, 0.1);
+}
+
+/* ── KOT CARDS ── */
+.km-feed {
+  padding: 0 16px 120px;
+}
+
+.km-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.km-kot-card {
+  background: white;
+  border-radius: 24px;
+  padding: 20px;
+  border: 1.5px solid #f1f5f9;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.km-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.km-kot-id {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #1e293b;
+}
+
+.km-kot-table {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #4f46e5;
+  text-transform: uppercase;
+  background: #eff6ff;
+  padding: 4px 10px;
+  border-radius: 8px;
+  width: fit-content;
+}
+
+.km-kot-status {
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.st-pending   { background: #fee2e2; color: #ef4444; }
+.st-cooking   { background: #ffedd5; color: #f59e0b; }
+.st-ready     { background: #dcfce7; color: #10b981; }
+
+/* ── BOTTOM NAV ── */
+.km-bottom-nav {
+  position: absolute;
+  bottom: 24px;
+  left: 16px;
+  right: 16px;
+  height: 64px;
+  background: #1e293b;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.nav-item {
+  color: #94a3b8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.nav-item.active { color: #818cf8; }

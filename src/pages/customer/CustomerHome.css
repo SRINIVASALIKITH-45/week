@@ -1,0 +1,356 @@
+/* ================================
+   CUSTOMER HOME CSS (SINGLE RES)
+================================ */
+
+.ch-container {
+    background: #fdfdfd;
+    min-height: 100vh;
+    padding-bottom: 90px;
+}
+
+/* Hero Section */
+.ch-hero {
+    position: relative;
+    height: 320px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.ch-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7);
+}
+
+.ch-hero-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    z-index: 1;
+}
+
+.ch-hero-content {
+    position: absolute;
+    bottom: 30px;
+    left: 20px;
+    right: 20px;
+    z-index: 2;
+    color: white;
+}
+
+.ch-badge-status {
+    background: #22c55e;
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.ch-res-name {
+    font-size: 2.2rem;
+    font-weight: 900;
+    font-family: 'Outfit', sans-serif;
+    margin-bottom: 4px;
+    letter-spacing: -0.03em;
+}
+
+.ch-res-cuisines {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-bottom: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ch-res-meta {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.ch-meta-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.ch-rating-box {
+    background: #16a34a;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.9rem;
+}
+
+.ch-meta-val {
+    font-weight: 800;
+    font-size: 1rem;
+}
+
+.ch-meta-sub {
+    font-size: 0.7rem;
+    opacity: 0.7;
+    margin-top: 2px;
+}
+
+.ch-res-divider {
+    width: 1px;
+    height: 30px;
+    background: rgba(255,255,255,0.2);
+}
+
+/* Search Section */
+.ch-search-section {
+    padding: 20px;
+    margin-top: -20px;
+    background: white;
+    border-radius: 20px 20px 0 0;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 -10px 20px rgba(0,0,0,0.05);
+}
+
+.ch-location-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+.ch-location-text {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ch-search-form {
+    display: flex;
+    align-items: center;
+    background: #f3f4f6;
+    border-radius: 14px;
+    padding: 0 15px;
+    height: 54px;
+}
+
+.ch-search-icon { color: #9ca3af; }
+
+.ch-search-input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 10px;
+    font-size: 1rem;
+    font-family: 'Outfit', sans-serif;
+    outline: none;
+}
+
+/* Body Content */
+.ch-body {
+    padding: 0 20px;
+}
+
+.ch-section {
+    margin-bottom: 30px;
+}
+
+.ch-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.ch-section-title {
+    font-size: 1.15rem;
+    font-weight: 800;
+    font-family: 'Outfit', sans-serif;
+    color: var(--secondary);
+}
+
+.ch-btn-text {
+    background: none;
+    border: none;
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Categories Grid */
+.ch-categories-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.ch-cat-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.ch-cat-icon-wrap {
+    width: 65px;
+    height: 65px;
+    background: white;
+    border: 1.5px solid #f1f5f9;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s;
+}
+
+.ch-cat-card:active .ch-cat-icon-wrap { transform: scale(0.9); }
+
+.ch-cat-name {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+/* Horizontal Scroll */
+.ch-horizontal-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 16px;
+    padding-bottom: 10px;
+    scrollbar-width: none;
+}
+.ch-horizontal-scroll::-webkit-scrollbar { display: none; }
+
+.ch-product-card-mini {
+    min-width: 140px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+}
+
+.ch-mini-img-wrap {
+    width: 140px;
+    height: 110px;
+    position: relative;
+}
+
+.ch-mini-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ch-mini-info {
+    padding: 10px;
+}
+
+.ch-mini-name {
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ch-mini-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ch-mini-rating {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #f59e0b;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.ch-mini-price {
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: var(--secondary);
+}
+
+/* Promo Banner */
+.ch-promo {
+    background: var(--secondary);
+    border-radius: 20px;
+    padding: 24px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.ch-promo h3 {
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-bottom: 4px;
+}
+
+.ch-promo p {
+    font-size: 0.85rem;
+    opacity: 0.8;
+    margin-bottom: 16px;
+}
+
+.ch-promo-btn {
+    background: var(--primary);
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.8rem;
+}
+
+.ch-promo-img {
+    font-size: 3rem;
+    opacity: 0.8;
+}
+
+/* Features */
+.ch-features {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: #f8fafc;
+    border-radius: 16px;
+    margin-top: 20px;
+}
+
+.ch-feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.ch-feat-icon {
+    font-size: 1.5rem;
+}

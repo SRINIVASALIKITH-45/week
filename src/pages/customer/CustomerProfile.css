@@ -1,0 +1,579 @@
+/* ================================
+   CUSTOMER PROFILE CSS
+================================ */
+
+.cpro-container {
+  background: #f7f8fa;
+  min-height: 100vh;
+  padding-bottom: 100px;
+}
+
+/* ---- Header ---- */
+.cpro-header {
+  background: linear-gradient(160deg, #4F46E5 0%, #1E293B 100%);
+  padding: 20px 16px 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cpro-header::before {
+  content: '';
+  position: absolute;
+  top: -50px; right: -50px;
+  width: 160px; height: 160px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 50%;
+}
+
+.cpro-header::after {
+  content: '';
+  position: absolute;
+  bottom: -30px; left: 15%;
+  width: 100px; height: 100px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 50%;
+}
+
+.cpro-header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.cpro-header-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: white;
+  font-family: 'Outfit', sans-serif;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.cpro-edit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 20px;
+  padding: 7px 16px;
+  color: white;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition: all 0.2s ease;
+  font-family: 'Outfit', sans-serif;
+}
+
+.cpro-edit-btn:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+/* ---- Avatar ---- */
+.cpro-avatar-section {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.cpro-avatar-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.cpro-avatar {
+  width: 76px;
+  height: 76px;
+  border-radius: 22px;
+  background: white;
+  color: var(--primary);
+  font-size: 1.6rem;
+  font-weight: 800;
+  font-family: 'Outfit', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.cpro-avatar-ring {
+  position: absolute;
+  inset: -3px;
+  border-radius: 25px;
+  border: 2px dashed rgba(255,255,255,0.5);
+  animation: spin 12s linear infinite;
+}
+
+.cpro-avatar-edit {
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  width: 24px;
+  height: 24px;
+  border-radius: 8px;
+  background: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--primary);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.cpro-user-info {
+  flex: 1;
+  padding-top: 4px;
+}
+
+.cpro-name {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: white;
+  margin: 0 0 2px;
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: -0.01em;
+}
+
+.cpro-email {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.8);
+  margin: 0 0 8px;
+}
+
+.cpro-member-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(255,255,255,0.22);
+  color: white;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  backdrop-filter: blur(6px);
+}
+
+/* Edit Fields */
+.cpro-edit-fields {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cpro-field {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 12px;
+  padding: 10px 14px;
+  color: white;
+  font-size: 0.88rem;
+  font-family: 'Outfit', sans-serif;
+  outline: none;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.cpro-field::placeholder { color: rgba(255,255,255,0.6); }
+.cpro-field:focus { background: rgba(255,255,255,0.28); }
+
+/* ---- Stats ---- */
+.cpro-stats {
+  display: flex;
+  background: rgba(255,255,255,0.15);
+  border-radius: 14px;
+  padding: 12px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+  position: relative;
+  z-index: 1;
+}
+
+.cpro-stat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.cpro-stat-val {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: white;
+  font-family: 'Outfit', sans-serif;
+}
+
+.cpro-stat-label {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.75);
+  font-weight: 500;
+}
+
+.cpro-stat-divider {
+  width: 1px;
+  background: rgba(255,255,255,0.25);
+  margin: 4px 0;
+}
+
+/* ---- Body ---- */
+.cpro-body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ---- Section (Expandable) ---- */
+.cpro-section {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.cpro-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.cpro-section-header:hover { background: #fafafa; }
+
+.cpro-section-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.cpro-section-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cpro-section-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 2px;
+  font-family: 'Outfit', sans-serif;
+}
+
+.cpro-section-sub {
+  font-size: 0.72rem;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.cpro-expand-content {
+  border-top: 1px solid #f1f5f9;
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: fadeSlideUp 0.25s ease;
+}
+
+/* Address Card */
+.cpro-address-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  background: #fafafa;
+  border-radius: 12px;
+  border: 1px solid #f1f5f9;
+}
+
+.cpro-addr-icon {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.cpro-addr-info { flex: 1; }
+
+.cpro-addr-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #374151;
+  margin: 0 0 3px;
+  font-family: 'Outfit', sans-serif;
+}
+
+.cpro-addr-text {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.cpro-addr-del {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 8px;
+  transition: background 0.15s;
+}
+
+.cpro-addr-del:hover { background: #FEF2F2; }
+
+.cpro-add-addr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1.5px dashed #e2e8f0;
+  border-radius: 14px;
+  padding: 12px;
+  background: none;
+  color: var(--primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Outfit', sans-serif;
+}
+
+.cpro-add-addr:hover { background: var(--primary-light); border-color: var(--primary); }
+
+/* Payment Card */
+.cpro-payment-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  background: #fafafa;
+  border-radius: 12px;
+  border: 1px solid #f1f5f9;
+}
+
+.cpro-pay-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.cpro-pay-type {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #374151;
+  margin: 0 0 2px;
+  font-family: 'Outfit', sans-serif;
+}
+
+.cpro-pay-detail {
+  font-size: 0.72rem;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.cpro-pay-default {
+  margin-left: auto;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #16a34a;
+  background: #F0FDF4;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+/* ---- Menu Groups ---- */
+.cpro-menu-group {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.cpro-menu-group-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  padding: 12px 16px 4px;
+  margin: 0;
+}
+
+.cpro-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 14px 16px;
+  background: none;
+  border: none;
+  border-top: 1px solid #f7f8fa;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s;
+}
+
+.cpro-menu-item:first-of-type { border-top: none; }
+
+.cpro-menu-item:hover { background: #fafafa; }
+
+.cpro-menu-item:active { background: #f1f5f9; }
+
+.cpro-menu-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cpro-menu-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cpro-menu-label {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  font-family: 'Outfit', sans-serif;
+}
+
+.cpro-menu-sub {
+  font-size: 0.72rem;
+  color: #94a3b8;
+}
+
+/* ---- Logout ---- */
+.cpro-logout-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 14px;
+  background: white;
+  border: 1.5px solid #fee2e2;
+  border-radius: 14px;
+  color: #ef4444;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Outfit', sans-serif;
+  transition: all 0.2s;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.cpro-logout-btn:hover {
+  background: #FEF2F2;
+  border-color: #ef4444;
+}
+
+.cpro-version {
+  text-align: center;
+  font-size: 0.72rem;
+  color: #cbd5e1;
+  margin: 0;
+}
+
+/* ---- Logout Modal ---- */
+.cpro-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 9999;
+  padding: 0 16px 24px;
+}
+
+.cpro-modal {
+  background: white;
+  border-radius: 24px;
+  padding: 28px 24px;
+  width: 100%;
+  max-width: 440px;
+  text-align: center;
+  animation: slideUp 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.cpro-modal-icon {
+  font-size: 3rem;
+  margin-bottom: 12px;
+}
+
+.cpro-modal-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #1e1e1e;
+  margin: 0 0 8px;
+  font-family: 'Outfit', sans-serif;
+}
+
+.cpro-modal-sub {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin: 0 0 24px;
+  line-height: 1.5;
+}
+
+.cpro-modal-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.cpro-modal-cancel {
+  flex: 1;
+  padding: 13px;
+  border-radius: 14px;
+  border: 1.5px solid #e2e8f0;
+  background: white;
+  color: #374151;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Outfit', sans-serif;
+  transition: background 0.2s;
+}
+
+.cpro-modal-cancel:hover { background: #f7f8fa; }
+
+.cpro-modal-confirm {
+  flex: 1;
+  padding: 13px;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Outfit', sans-serif;
+  box-shadow: 0 4px 14px rgba(239,68,68,0.3);
+  transition: all 0.2s;
+}
+
+.cpro-modal-confirm:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(239,68,68,0.4);
+}

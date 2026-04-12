@@ -1,0 +1,78 @@
+/* ================================
+   CUSTOMER CART CSS
+================================ */
+
+.cc-container {
+    background: #fdfdfd;
+    min-height: 100vh;
+    padding-bottom: 20px;
+}
+
+/* Header */
+.cc-header-title {
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin: 0;
+    font-family: 'Outfit';
+}
+
+.cc-header-sub {
+    font-size: 0.8rem;
+    color: #64748b;
+    margin: 0;
+}
+
+/* Bill Details */
+.cc-bill-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+}
+
+/* Modal Animation */
+@keyframes slideUp {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+}
+
+.extra-small {
+    font-size: 0.75rem;
+}
+
+/* Card Styling */
+.cc-card {
+    background: white;
+    border-radius: 20px;
+    border: 1px solid #f1f5f9;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+}
+
+.cc-card-header {
+    padding: 16px;
+    border-bottom: 1px solid #f1f5f9;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 800;
+    font-family: 'Outfit';
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+/* Items List */
+.cc-items-list {
+    padding: 16px;
+}
+
+.cc-item-name {
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.cc-item-total {
+    font-weight: 800;
+    color: #1a1a1a;
+    font-size: 0.95rem;
+}

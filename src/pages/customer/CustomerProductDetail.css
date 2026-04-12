@@ -1,0 +1,414 @@
+/* ================================
+   CUSTOMER PRODUCT DETAIL CSS
+================================ */
+
+.cpd-container {
+  background: #f7f8fa;
+  min-height: 100vh;
+}
+
+.cpd-skeleton-wrap {
+  background: white;
+  min-height: 100vh;
+}
+
+/* ---- Hero ---- */
+.cpd-hero {
+  position: relative;
+  height: 320px;
+  overflow: hidden;
+  background: #f1f5f9;
+}
+
+.cpd-img-skeleton {
+  position: absolute;
+  inset: 0;
+  border-radius: 0;
+  height: 100%;
+}
+
+.cpd-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.cpd-hero-img.loaded {
+  opacity: 1;
+}
+
+.cpd-hero-gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
+}
+
+.cpd-hero-btns {
+  position: absolute;
+  top: 16px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px;
+  z-index: 2;
+}
+
+.cpd-circle-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.92);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+  transition: transform 0.2s, background 0.2s;
+  color: #1e1e1e;
+  backdrop-filter: blur(6px);
+}
+
+.cpd-circle-btn:hover {
+  transform: scale(1.05);
+  background: white;
+}
+
+.cpd-circle-btn:active {
+  transform: scale(0.94);
+}
+
+.cpd-food-badge-wrap {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.92);
+  padding: 4px 10px 4px 6px;
+  border-radius: 20px;
+  backdrop-filter: blur(6px);
+  z-index: 2;
+}
+
+.cpd-food-type-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #374151;
+}
+
+/* ---- Content Card ---- */
+.cpd-content {
+  background: white;
+  border-radius: 20px 20px 0 0;
+  margin-top: -20px;
+  position: relative;
+  z-index: 1;
+  min-height: calc(100vh - 300px);
+}
+
+.cpd-section {
+  padding: 16px 20px;
+}
+
+.cpd-title-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 20px 20px 12px;
+}
+
+.cpd-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0 0 6px;
+  font-family: 'Outfit', sans-serif;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.cpd-price-badge {
+  flex-shrink: 0;
+}
+
+.cpd-price {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary);
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Meta Chips */
+.cpd-meta-row {
+  display: flex;
+  gap: 8px;
+  padding: 0 20px 16px;
+  flex-wrap: wrap;
+}
+
+.cpd-meta-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #f7f8fa;
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.cpd-desc {
+  font-size: 0.88rem;
+  color: #64748b;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.cpd-section-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 12px;
+  font-family: 'Outfit', sans-serif;
+}
+
+/* ---- Spice Bar ---- */
+.cpd-spice-bar {
+  display: flex;
+  gap: 6px;
+}
+
+.cpd-spice-dot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+  opacity: 0.3;
+  transition: opacity 0.2s;
+}
+
+.cpd-spice-dot.active {
+  opacity: 1;
+}
+
+.cpd-spice-icon {
+  font-size: 1.4rem;
+}
+
+.cpd-spice-name {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #64748b;
+  text-align: center;
+}
+
+.cpd-spice-dot.active .cpd-spice-name {
+  color: var(--primary);
+}
+
+/* ---- Add-ons ---- */
+.cpd-addons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cpd-addon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1.5px solid #e2e8f0;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Outfit', sans-serif;
+}
+
+.cpd-addon.active {
+  border-color: var(--primary);
+  background: var(--primary-light);
+}
+
+.cpd-addon-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cpd-addon-check {
+  color: var(--primary);
+}
+
+.cpd-addon-name {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.cpd-addon.active .cpd-addon-name {
+  color: var(--primary);
+}
+
+.cpd-addon-price {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #64748b;
+}
+
+.cpd-addon.active .cpd-addon-price {
+  color: var(--primary);
+}
+
+/* ---- Quantity ---- */
+.cpd-qty-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cpd-qty-ctrl {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: #f7f8fa;
+  border-radius: 14px;
+  border: 1.5px solid #e2e8f0;
+  overflow: hidden;
+}
+
+.cpd-qty-btn {
+  width: 44px;
+  height: 44px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 1.2rem;
+  transition: background 0.15s;
+}
+
+.cpd-qty-btn:hover {
+  background: rgba(255,107,53,0.1);
+}
+
+.cpd-qty-btn:active {
+  transform: scale(0.88);
+}
+
+.cpd-qty-val {
+  min-width: 36px;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Tags Row */
+.cpd-tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* ---- Sticky Footer ---- */
+.cpd-sticky-bar {
+  position: fixed;
+  bottom: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 32px);
+  max-width: 448px;
+  background: white;
+  border-radius: 18px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  box-shadow: 0 -4px 24px rgba(0,0,0,0.12), 0 8px 32px rgba(0,0,0,0.10);
+  z-index: 500;
+  border: 1px solid #f1f5f9;
+}
+
+.cpd-sticky-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.cpd-sticky-label {
+  font-size: 0.72rem;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.cpd-sticky-price {
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: var(--text-primary);
+  font-family: 'Outfit', sans-serif;
+}
+
+.cpd-add-btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 16px;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Outfit', sans-serif;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: var(--shadow-lg);
+}
+
+.cpd-add-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255,107,53,0.45);
+}
+
+.cpd-add-btn:active { transform: scale(0.96); }
+
+.cpd-add-btn.added {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  box-shadow: 0 4px 16px rgba(34, 197, 94, 0.35);
+  animation: popIn 0.3s ease;
+}
+
+.cpd-view-cart-btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 16px;
+  padding: 14px 24px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Outfit', sans-serif;
+  box-shadow: var(--shadow-lg);
+  transition: all 0.2s;
+}
+
+.cpd-view-cart-btn:hover {
+  transform: translateY(-2px);
+}
